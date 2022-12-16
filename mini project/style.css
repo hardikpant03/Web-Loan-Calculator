@@ -1,0 +1,112 @@
+.loan_calculator{
+    font-family:"Roboto",sans-serif;
+    width: 1000px;
+    height: 680px;
+    margin: 24px auto;
+    background:white;
+    box-shadow:0 12px 50px -11px rgb(0,0,0,0.2);
+    border-radius:8px;
+    color:black;
+}
+.top1{
+    color: cyan;
+    display: flex;
+    padding: 0px 15px;
+
+}
+.Loan-amount .interest-rate .Loan_time{
+   border: 2px solid red;
+   border-radius: 4px;
+}
+.loan_calculator {
+    box-sizing: border-box;
+}
+.loan_calculator .top{
+    background: #032c14;
+    color:white;
+    padding: 32px;
+}
+
+.loan_calculator .top h2{
+    margin-top:0;
+}
+
+.loan_calculator form{
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.loan_calculator .title{
+    margin-bottom: 16px;
+}
+
+.loan_calculator .result{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.loan_calculator .result .left{
+    width: 100%;
+    padding: 8px 32px;
+}
+
+.loan_claculator .result{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.loan_calculator .result .left{
+    width: 100%;
+    padding: 8px 60px;
+}
+.loan_calculator .right{
+    width: 85%;
+}
+
+.loan_calculator .left h3{
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.loan_calculator .result .value{
+    font-size: 30px;
+    font-weight: 900;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(20,33,61,0.2);
+}
+
+.loan_calculator .result .value::before{
+    content: "₹";
+    font-size: 24px;
+    font-weight: 400;
+    margin-right: 6px;
+    opacity: 0.4;
+}
+
+.loan_calculator .calculate-btn{
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 32px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    margin: 24px 0;
+}
+#whole{
+    padding: 20px;
+}
+.result{
+    height: 430px;
+}
+.calculate-btn:hover{
+   
+    background-color: #c61470;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }

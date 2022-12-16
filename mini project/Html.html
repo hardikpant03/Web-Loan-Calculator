@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="loan_calculator">
+        <div class="top">
+            <h2 class="top1">Loan/EMI Calculator</h2>
+
+            <form action="#">
+                <div class="group">
+                    <div class="title" class="Amount">Amount</div>
+                    <input type="text" value="30000" class="Loan-amount" />
+                </div>
+
+                <div class="group">
+                    <div class="title" class="Interest_Rate">Please Select Interest Rate</div>
+                    <!-- <input type="text" placeholder="00000" class="interest-rate" /> -->
+                    <select name="loan" class="interest1" onchange="yesnoCheck(this);">
+                        <option value="hello">Select</option>
+                        <option value="custom">Enter your choice interest rate</option>
+                        <option value="Sbi">SBI(state bank of india)</option>
+                        <option value="bob">BOB(bank of baroda)</option>
+                         <option value="hdfc">HDFC</option>
+                         <option value="icic">ICIC</option>
+                         <option value="axis">AXIS BANK</option>
+                         <option value="kotak">KOTAK MAHINDRA BANK</option>
+                         <option value="indus">INDUSIND BANK</option>
+                         <option value="yes">YES BANK</option>
+                         <option value="punjab">PUNJAB NATIONAL BANK</option>
+                         <option value="bank_of_india">BANK OF INDIA</option>
+                    </select>
+                    <input type="text" id="ifYes" style="display: block;" value="10" class="interest-rate">
+                </div>
+
+                <div class="group">
+                    <div class="title" class="Time_Period">Time Period(in months)</div>
+                    <input type="text" value="24" class="Loan_time" />
+                </div>
+            </form>
+        </div>
+
+
+        <div id="whole" class="result">
+            <div class="left">
+                <div class="loan-EMI">
+                    <h3>Loan EMI</h3>
+                    <div class="value"></div>
+                </div>
+                <div class="Total-Interest">
+                    <h3>Total Interest Payable</h3>
+                    <div class="value"></div>
+                </div>
+                <div class="Total-Amount">
+                    <h3>Total Amount </h3>
+                    <div class="value"></div>
+                </div>
+
+                <button class="calculate-btn" >Calculate</button>
+            </div>
+            <div class="right">
+                <canvas id="myChart" width="400" height="400"></canvas>
+              </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+    <script src="main.js"> </script>
+</body>
+
+</html>
