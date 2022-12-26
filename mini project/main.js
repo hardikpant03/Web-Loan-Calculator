@@ -7,13 +7,19 @@ const TotalInterest = document.querySelector(".Total-Interest .value")
 const  Totalamount = document.querySelector(".Total-Amount .value")
 
 const calculatebutton = document.querySelector(".calculate-btn")
-let interest_rate = document.querySelector(".interest1 .value")
+// let interest_rate = document.querySelector(".interest1 .value")
 
 let amount = parseFloat(amountinput.value)
 let interestrate = parseFloat(interestinput.value)
 let time = parseFloat(timeinput.value)
+let interest
+interest = interestrate / 12 / 100
+let interest2
+let banksel = document.getElementById("bank-select")
 
-let interest = interestrate / 12 / 100
+
+interest = interest2 / 12 / 100
+// console.log(interest);
  
 function yesnoCheck(that) {
     if (that.value == "custom") {
@@ -22,6 +28,8 @@ function yesnoCheck(that) {
         document.getElementById("ifYes").style.display = "none";
     }
 }
+// let interest = interestrate
+// console.log(interest);
 let myChart;
 
 const displayChart = (totalinterestpaymable) => {
@@ -71,9 +79,48 @@ const updatevalue =()=>{
    }
 const init  = () =>{
     updatevalue()
+    banksel.addEventListener('change', function bankselect(){
+      console.log(this.value)
+      switch(this.value){
+      case "Sbi":
+        interest2= 8.73;
+        break;
+      case "bob":
+        interest2 = 9.69;
+        break;
+      case "hdfc":
+        interest2 = 11;
+        break;
+      case "icic":
+        interest2 = 10
+        break;
+      case "axis":
+        interest2 = 13
+        break;
+      case "kotak":
+        interest2 = 12
+        break;
+      case "indus":
+        interest2 = 11.5
+        break;
+      case "yes":
+        interest2 = 10.5
+        break;
+      case "punjab":
+        interest2 = 10
+        break;
+      case "bank_of_india":
+        interest2 = 9.5
+        break;
+      }
+      interest = interest2 / 12 / 100 
+      let emi = amount * interest * (Math.pow(1+interest,time)) / (Math.pow(1+interest,time)-1)
+      updatedata(emi)
+      // calculatebutton.addEventListener("click")
+      })
     let emi = calculateEMI()
     updatedata(emi)
 };
+
 init();
 calculatebutton.addEventListener("click", init)
-
